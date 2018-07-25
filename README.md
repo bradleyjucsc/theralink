@@ -20,6 +20,18 @@ Or install it yourself as:
     $ gem install thera
 
 ## Usage
+```ruby
+client = Thera::Client.new('token')
+client.appointment.all()
+client.appointment.create(start: Time.now, end: Time.now, title: 'title')
+
+client.appointment_request.create(start: Time.now, end: Time.now, title: 'title', approver_id: 1)
+
+client.user.create(email: 'cersei@lannister.com', role: 'client')
+client.user.lookup('cersei@lannister.com')
+
+client.payment.create(payment_amount: 500, payer_id: 1)
+```
 
 ## Development
 
