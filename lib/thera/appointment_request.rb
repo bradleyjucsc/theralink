@@ -4,12 +4,12 @@ module Thera
   class AppointmentRequest < Base
     def all()
       response = get('/appointment-request')
-      response.fetch('appointment_requests', response)
+      response.fetch('appointment_requests', [])
     end
 
     def find(id, attrs={})
       response = get("/appointment-request/#{id}", query: attrs)
-      response.fetch('appointment_request', response)
+      response.fetch('appointment_request', nil)
     end
 
     def create(attrs={})
