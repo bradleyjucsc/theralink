@@ -22,15 +22,25 @@ Or install it yourself as:
 ## Usage
 ```ruby
 client = Thera::Client.new('token')
+
 client.appointment.all()
+client.appointment.find(1)
 client.appointment.create(start: Time.now, end: Time.now, title: 'title')
 
+client.appointment_request.all()
+client.appointment_request.find(1)
 client.appointment_request.create(start: Time.now, end: Time.now, title: 'title', approver_id: 1)
 
+client.user.all()
+client.user.all(1)
 client.user.create(email: 'cersei@lannister.com', role: 'client')
 client.user.lookup('cersei@lannister.com')
 
+client.payment.all()
+client.payment.find(1)
 client.payment.create(payment_amount: 500, payer_id: 1)
+
+client.provider.all()
 ```
 
 ## Development
@@ -41,4 +51,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/thera.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bradleyjucsc/thera.
